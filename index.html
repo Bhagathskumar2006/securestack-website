@@ -232,9 +232,9 @@
     <!-- HERO -->
     <div class="hero">
       <div class="hero-tag">// Mission: Deploy · Defend · Demonstrate</div>
-      <h1>A <span class="hl">Secure</span> Web App<br/>on <span class="hl2">AWS Cloud</span></h1>
-      <p>A static website deployed using AWS S3 and CloudFront with security best practices including HTTPS enforcement, CSP headers, bucket policies, and access control.</p>
-      <div class="status-bar"><div class="dot"></div> LIVE &amp; SECURED — AWS S3 + CloudFront</div>
+      <h1>A <span class="hl">Secure</span> Web App<br/>on <span class="hl2">Microsoft Azure</span></h1>
+      <p>A static website deployed using Azure Static Web Apps with GitHub CI/CD pipeline. Security implemented via HTTPS enforcement, security headers, access control, and Azure's built-in firewall protection.</p>
+      <div class="status-bar"><div class="dot"></div> LIVE &amp; SECURED — Azure Static Web Apps + GitHub Actions</div>
     </div>
 
     <!-- ABOUT -->
@@ -245,17 +245,17 @@
         <div class="card">
           <div class="card-icon">🌐</div>
           <h3>Static Website</h3>
-          <p>A responsive HTML/CSS website hosted on AWS S3 as a static site, served globally via CloudFront CDN with HTTPS enabled.</p>
+          <p>A responsive HTML/CSS website hosted on Azure Static Web Apps, served globally via Azure CDN with HTTPS enabled automatically.</p>
         </div>
         <div class="card">
           <div class="card-icon">☁️</div>
-          <h3>AWS Deployment</h3>
-          <p>Deployed on Amazon S3 with a public bucket policy scoped only to CloudFront. No direct S3 access allowed from the internet.</p>
+          <h3>Azure Deployment</h3>
+          <p>Deployed on Microsoft Azure Static Web Apps connected to GitHub. Every commit to main branch triggers automatic deployment via GitHub Actions CI/CD.</p>
         </div>
         <div class="card">
           <div class="card-icon">🔒</div>
           <h3>Security First</h3>
-          <p>HTTPS enforced, HTTP redirected, Content Security Policy headers, S3 Block Public Access, and CloudFront Origin Access Control configured.</p>
+          <p>HTTPS enforced, Content Security Policy, X-Frame-Options, Strict Transport Security, Permissions Policy and Referrer Policy all configured — verified A+ grade.</p>
         </div>
       </div>
     </section>
@@ -276,50 +276,56 @@
         <tbody>
           <tr>
             <td>HTTPS Enforcement</td>
-            <td>AWS CloudFront</td>
+            <td>Azure Static Web Apps</td>
             <td>All traffic encrypted in transit; HTTP auto-redirects to HTTPS</td>
             <td><span class="badge badge-green">ACTIVE</span></td>
           </tr>
           <tr>
-            <td>Origin Access Control</td>
-            <td>S3 + CloudFront OAC</td>
-            <td>S3 bucket is private; only CloudFront can read it</td>
-            <td><span class="badge badge-green">ACTIVE</span></td>
-          </tr>
-          <tr>
-            <td>Block Public Access</td>
-            <td>AWS S3</td>
-            <td>Prevents accidental exposure of S3 objects to the public</td>
-            <td><span class="badge badge-green">ACTIVE</span></td>
-          </tr>
-          <tr>
-            <td>Content Security Policy</td>
-            <td>HTML Meta Tag</td>
+            <td>Content-Security-Policy</td>
+            <td>staticwebapp.config.json</td>
             <td>Prevents XSS attacks by restricting resource loading origins</td>
             <td><span class="badge badge-green">ACTIVE</span></td>
           </tr>
           <tr>
             <td>X-Frame-Options: DENY</td>
-            <td>HTML Meta Tag</td>
+            <td>staticwebapp.config.json</td>
             <td>Prevents clickjacking by disabling iframe embedding</td>
             <td><span class="badge badge-green">ACTIVE</span></td>
           </tr>
           <tr>
+            <td>Strict-Transport-Security</td>
+            <td>staticwebapp.config.json</td>
+            <td>Forces HTTPS for 1 year, including all subdomains</td>
+            <td><span class="badge badge-green">ACTIVE</span></td>
+          </tr>
+          <tr>
             <td>X-Content-Type-Options</td>
-            <td>HTML Meta Tag</td>
+            <td>staticwebapp.config.json</td>
             <td>Prevents MIME-type sniffing attacks</td>
             <td><span class="badge badge-green">ACTIVE</span></td>
           </tr>
           <tr>
-            <td>IAM Least Privilege</td>
-            <td>AWS IAM</td>
-            <td>Only required S3 permissions granted; no admin-level access</td>
-            <td><span class="badge badge-blue">CONFIGURED</span></td>
+            <td>Permissions-Policy</td>
+            <td>staticwebapp.config.json</td>
+            <td>Disables access to camera, microphone, geolocation</td>
+            <td><span class="badge badge-green">ACTIVE</span></td>
           </tr>
           <tr>
-            <td>Bucket Policy</td>
-            <td>AWS S3</td>
-            <td>Restricts GetObject to CloudFront distribution only</td>
+            <td>Referrer-Policy</td>
+            <td>staticwebapp.config.json</td>
+            <td>Controls referrer info sent with requests for privacy</td>
+            <td><span class="badge badge-green">ACTIVE</span></td>
+          </tr>
+          <tr>
+            <td>Azure Firewall / DDoS</td>
+            <td>Azure Platform</td>
+            <td>Built-in Azure firewall blocks malicious traffic automatically</td>
+            <td><span class="badge badge-green">ACTIVE</span></td>
+          </tr>
+          <tr>
+            <td>GitHub Access Control</td>
+            <td>GitHub + Azure IAM</td>
+            <td>Only authorized GitHub account can deploy to Azure</td>
             <td><span class="badge badge-green">ACTIVE</span></td>
           </tr>
         </tbody>
@@ -333,12 +339,13 @@
       <div class="stack-list">
         <div class="stack-chip">HTML5</div>
         <div class="stack-chip">CSS3</div>
-        <div class="stack-chip">AWS S3</div>
-        <div class="stack-chip">AWS CloudFront</div>
-        <div class="stack-chip">AWS IAM</div>
+        <div class="stack-chip">Microsoft Azure</div>
+        <div class="stack-chip">Azure Static Web Apps</div>
+        <div class="stack-chip">GitHub Actions CI/CD</div>
         <div class="stack-chip">HTTPS / TLS</div>
         <div class="stack-chip">Content Security Policy</div>
-        <div class="stack-chip">Origin Access Control</div>
+        <div class="stack-chip">Azure CDN</div>
+        <div class="stack-chip">Azure IAM</div>
       </div>
     </section>
 
@@ -346,7 +353,7 @@
 
   <footer>
     <div class="container">
-      Deployed on <span>AWS S3 + CloudFront</span> &nbsp;|&nbsp; FYUGP Summer Internship 2025 &nbsp;|&nbsp; <span>SecureStack Mission</span>
+      Deployed on <span>Microsoft Azure Static Web Apps</span> &nbsp;|&nbsp; FYUGP Summer Internship 2025 &nbsp;|&nbsp; <span>SecureStack Mission</span>
     </div>
   </footer>
 

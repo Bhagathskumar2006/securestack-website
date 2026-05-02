@@ -31,7 +31,6 @@
       overflow-x: hidden;
     }
 
-    /* Grid bg */
     body::before {
       content: '';
       position: fixed;
@@ -46,7 +45,6 @@
 
     .container { max-width: 960px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
 
-    /* NAV */
     nav {
       border-bottom: 1px solid var(--border);
       padding: 18px 0;
@@ -68,7 +66,6 @@
       letter-spacing: 1px;
     }
 
-    /* HERO */
     .hero {
       padding: 80px 0 60px;
       text-align: center;
@@ -118,7 +115,6 @@
     }
     .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent2); animation: pulse 1.5s infinite; }
 
-    /* SECTION */
     section { padding: 60px 0; }
     .section-label {
       font-family: 'Share Tech Mono', monospace;
@@ -136,7 +132,6 @@
       padding-left: 16px;
     }
 
-    /* CARDS */
     .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
     .card {
       background: var(--card);
@@ -150,7 +145,6 @@
     .card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 10px; color: #fff; }
     .card p { font-size: 0.88rem; color: var(--muted); line-height: 1.65; }
 
-    /* SECURITY TABLE */
     .sec-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
     .sec-table th {
       text-align: left;
@@ -181,7 +175,6 @@
     .badge-blue { background: rgba(0,229,255,0.1); color: var(--accent); border: 1px solid rgba(0,229,255,0.25); }
     .badge-warn { background: rgba(255,107,53,0.1); color: var(--warn); border: 1px solid rgba(255,107,53,0.3); }
 
-    /* TECH STACK */
     .stack-list { display: flex; flex-wrap: wrap; gap: 12px; }
     .stack-chip {
       background: var(--surface);
@@ -195,7 +188,6 @@
     }
     .stack-chip:hover { border-color: var(--accent); color: var(--accent); }
 
-    /* FOOTER */
     footer {
       border-top: 1px solid var(--border);
       padding: 28px 0;
@@ -206,7 +198,6 @@
     }
     footer span { color: var(--accent); }
 
-    /* ANIMATIONS */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -326,6 +317,12 @@
             <td>GitHub Access Control</td>
             <td>GitHub + Azure IAM</td>
             <td>Only authorized GitHub account can deploy to Azure</td>
+            <td><span class="badge badge-green">ACTIVE</span></td>
+          </tr>
+          <tr>
+            <td>Regular Updates / Patching</td>
+            <td>Azure Platform (PaaS)</td>
+            <td>Microsoft auto-patches OS, runtime, and infrastructure automatically</td>
             <td><span class="badge badge-green">ACTIVE</span></td>
           </tr>
         </tbody>
